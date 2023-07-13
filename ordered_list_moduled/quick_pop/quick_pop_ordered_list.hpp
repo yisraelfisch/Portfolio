@@ -1,4 +1,4 @@
-/********************************* 
+/******************************************************** 
  * Author: yisrael fisch            
  * File: quick_pop_ordered_list.hpp 
  * 
@@ -8,9 +8,10 @@
  * acording the ELEMENT you pass.
  * the container will be sorted accorsing a_compare func 
  * you will pass to the constructor.
- * when you pop an element you will get the the top priority element
+ * when you pop an element 
+ * you will get the the top priority element
  * in O(1)
- * ******************************/
+ * *******************************************************/
 #pragma once
 #include <cstddef>//NULL
 #include <mutex>//mutex, unique_lock

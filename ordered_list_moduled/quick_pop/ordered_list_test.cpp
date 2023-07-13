@@ -1,8 +1,14 @@
-/********************************* 
+/**************************************************** 
  * Author: yisrael fisch            
  * File: ordered_list_test.hpp 
- * 
- * ******************************/
+ * Discription:
+ * two test cases
+ * one intanciate contauner of ints
+ * push int to the container and pop them orderley
+ * seconed intanciate contauner of class Person
+ * push object and pop them
+ * all done by threads
+ * **************************************************/
 
 #include "quick_pop_ordered_list.hpp"
 #include <iostream> //cout
