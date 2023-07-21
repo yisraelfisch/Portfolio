@@ -19,7 +19,7 @@ class UserEncoder(json.JSONEncoder):
 @app.route('/user', methods=['GET'])
 def get_all_users():
     """
-    this function is map with /user endpoint and
+    this function is map with /user endpoint, and
     it renders all user records using GET Http method
     """
     message = {
@@ -46,7 +46,7 @@ def get_all_users():
 @app.route('/user/<int:id>', methods=['GET'])
 def get_specific_user(id: int):
     """
-    this function is map with /user/pk endpoint and
+    this function is map with /user/pk endpoint, and
     it renders specific user records with respect to its pk
     using GET Http method
     """
@@ -61,11 +61,11 @@ def get_specific_user(id: int):
     return json.dumps(user, cls=UserEncoder)
 
 
-@app.route('/user', methods=['POST'] )
+@app.route('/user', methods=['POST'])
 def create_user():
     """
-    this function is map with /user endpoint and
-    it create user records using POST Http method
+    this function is map with /user endpoint, and
+    it creates user records using POST Http method
     """
     message = {
         'status': 404,
@@ -92,8 +92,8 @@ def create_user():
 @app.route('/user/<int:id>', methods=['PUT'])
 def update_user(id):
     """
-    this function is map with /user/pk endpoint and
-    it update specific user records using PUT Http method
+    this function is map with /user/pk endpoint, and
+    it updates specific user records using PUT Http method
     """
     message = {
       'status': 404,
@@ -127,8 +127,8 @@ def update_user(id):
 @app.route('/user/<int:id>', methods=['DELETE'])
 def delete_user(id):
     """
-    this function is map with /user/pk endpoint and
-    it delete specific user records using DELETE Http method
+    this function is map with /user/pk endpoint, and
+    it deletes specific user records using DELETE Http method
     """
     message = {
       'status': 404,
@@ -151,60 +151,3 @@ def delete_user(id):
 if __name__ == "__main__":
     db.create_all()
     app.run(host="0.0.0.0", debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""from fastapi import FastAPI
-import sqlite3
-
-app = FastAPI()
-
-
-@app.get("/")
-def read():
-    info_file = open("InfoFile.txt", "r+")
-    name = info_file.readline()
-    info_file.close()
-    return {"current": name}
-
-
-@app.post("/new_name/{new_name}")
-def create(new_name: str):
-    info_file = open("InfoFile.txt", "r+")
-    info_file.truncate(0)
-    info_file.write(new_name)
-    info_file.seek(0)
-    name = info_file.readline()
-    info_file.close()
-    return {"my new name": name}
-
-
-@app.put("/change_name/{new_name}")
-def update(new_name: str):
-    info_file = open("InfoFile.txt", "r+")
-    info_file.truncate(0)
-    info_file.write(new_name)
-    info_file.seek(0)
-    name = info_file.readline()
-    info_file.close()
-    return {"my new name": name}
-
-
-@app.delete("/delete_name")
-def delete():
-    info_file = open("InfoFile.txt", "r+")
-    info_file.truncate(0)
-    info_file.write("no name exist")
-    info_file.close()
-    return {"name deleted"}"""
