@@ -41,11 +41,11 @@ class TestFlaskAPI(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         # Perform additional assertions as needed to verify the update
 
-    """def test_delete_user(self):
+    def test_delete_user(self):
         user_id = 1000  # Change this to the desired user ID to test
         url = f"{BASE_URL}/user/{user_id}"
         response = requests.delete(url)
-        self.assertEqual(response.status_code, 200)"""
+        self.assertEqual(response.status_code, 200)
         # Perform additional assertions as needed to verify the deletion
 
 

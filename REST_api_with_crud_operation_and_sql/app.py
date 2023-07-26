@@ -1,5 +1,5 @@
 
-from flask import (Flask, request, jsonify)
+from flask import (Flask, request, jsonify,make_response)
 from settings import db, app
 from models import User
 import json
@@ -84,7 +84,8 @@ def create_user():
         message.update({'status': 201,
                         'message': 'User created successfully!!! ',
                         'user_id': user.id})
-        return jsonify(message)
+        return make_response(jsonify(message), 201)
+
     except:
         return jsonify(message)
 
