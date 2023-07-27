@@ -1,0 +1,70 @@
+# this is a file with various commands in sql
+# you can use those example to manipulate
+# the data base from sqlite browser
+SELECT * FROM user;
+
+INSERT INTO user(id, first_name,last_name)
+VALUES (200, 'lavi','ivgi');
+SELECT * FROM user;
+
+UPDATE user
+SET first_name = 'yosef',
+last_name = (SELECT last_name FROM user WHERE id = 8)
+WHERE id = 100;
+SELECT * FROM user;
+
+DELETE FROM user WHERE id = 200;
+SELECT * FROM user;
+
+
+# here is an example how to write those commands
+# with importing only sqlite3
+import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('data.db')  # Replace 'data.db' with your actual database file name
+cursor = conn.cursor()
+
+# Query 1: SELECT all rows from the 'user' table
+cursor.execute("SELECT * FROM user")
+rows = cursor.fetchall()
+print("Query 1 Result:")
+print(rows)
+
+# Query 2: INSERT a new row into the 'user' table
+cursor.execute("INSERT INTO user (id, first_name, last_name) VALUES (200, 'lavi', 'ivgi')")
+conn.commit()
+
+# Query 3: SELECT all rows from the 'user' table again after the INSERT
+cursor.execute("SELECT * FROM user")
+rows = cursor.fetchall()
+print("Query 3 Result:")
+print(rows)
+
+# Query 4: UPDATE a row in the 'user' table
+cursor.execute("UPDATE user SET first_name = 'yosef', last_name = (SELECT last_name FROM user WHERE id = 8) WHERE id = 100")
+conn.commit()
+
+# Query 5: SELECT all rows from the 'user' table again after the UPDATE
+cursor.execute("SELECT * FROM user")
+rows = cursor.fetchall()
+print("Query 5 Result:")
+print(rows)
+
+# Query 6: DELETE a row from the 'user' table
+cursor.execute("DELETE FROM user WHERE id = 200")
+conn.commit()
+
+# Query 7: SELECT all rows from the 'user' table again after the DELETE
+cursor.execute("SELECT * FROM user")
+rows = cursor.fetchall()
+print("Query 7 Result:")
+print(rows)
+
+# Query 8: SELECT only the row with id 8 from the 'user' table
+cursor.execute("SELECT * FROM user WHERE id = 8")
+rows = cursor.fetchall()
+print(rows)
+
+# Close the database connection
+conn.close()
