@@ -1,0 +1,17 @@
+# exclude everything except directory 
+*
+!*/
+!.gitignore
+!.myfuncs
+!*.md
+!*.mak
+!Makefile.*
+!Makefile
+!*.h
+!*.c
+!*.cpp
+!*.hpp
+!/ds/include/*
+!/ds/test/*
+!*.json
+

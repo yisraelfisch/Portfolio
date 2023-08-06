@@ -1,0 +1,39 @@
+# aliases according to WS 
+# gcc compiliation aliases: c89, c99, debug mode, release mode
+alias gd='gcc -ansi -pedantic-errors -Wall -Wextra -g'
+alias gc='gcc -ansi -pedantic-errors -Wall -Wextra -DNDEBUG -O3'
+alias gd9='gcc -std=c99 -pedantic-errors -Wall -Wextra -g'
+alias gc9='gcc -std=c99 -pedantic-errors -Wall -Wextra -DNDEBUG -O3'
+
+
+# Valgrind alias
+alias vlg='valgrind --leak-check=yes --track-origins=yes'
+
+
+# my alias, according to WS build process
+alias go='gcc -ansi -pedantic-errors -Wall -Wextra -g -c'
+
+
+# aliases according to WS c++ before you start
+
+# Investigate, 2a: 
+# gcc compiliation aliases: c89, c99, debug mode, release mode - without warnings as errors
+alias gd-='gcc -ansi -pedantic -Wall -Wextra -g'
+alias gc-='gcc -ansi -pedantic -Wall -Wextra -DNDEBUG -O3'
+alias gd9-='gcc -std=c99 -pedantic -Wall -Wextra -g'
+alias gc9-='gcc -std=c99 -pedantic -Wall -Wextra -DNDEBUG -O3'
+
+
+
+# Investigate, 2b: 
+# g++ compiliation aliases: c++ 98, c++ 11, debug mode, release mode - without warnings as errors
+alias gdp-='g++ -ansi -pedantic -Wall -Wextra -g'
+alias gcp-='g++ -ansi -pedantic -Wall -Wextra -DNDEBUG -O3'
+alias gd11p-='g++ -std=c++11 -pedantic -Wall -Wextra -g'
+alias gc11p-='g++ -std=c++11 -pedantic -Wall -Wextra -DNDEBUG -O3'
+
+# g++ compiliation aliases: c++ 98, c++ 11, debug mode, release mode - with warnings as errors
+alias gdp='g++ -ansi -pedantic-errors -Wall -Wextra -g'
+alias gcp='g++ -ansi -pedantic-errors -Wall -Wextra -DNDEBUG -O3'
+alias gd11p='g++ -std=c++11 -pedantic-errors -Wall -Wextra -g'
+alias gc11p='g++ -std=c++11 -pedantic-errors -Wall -Wextra -DNDEBUG -O3'
