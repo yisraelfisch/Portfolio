@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "4d43e034-82a2-43e4-8cc9-0190b017acb4",
+		"name": "REST api with sql in python3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28592185",
+		"_collection_link": "https://winter-star-401222.postman.co/workspace/New-Team-Workspace~2ab1da56-622f-4fcf-b5d6-893fb4446938/collection/28592185-4d43e034-82a2-43e4-8cc9-0190b017acb4?action=share&source=collection_link&creator=28592185"
+	},
+	"item": [
+		{
+			"name": "localhost:5000/user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"    // Test for response status code",
+							"    pm.test(\"Status code is 200\", function () {",
+							"        pm.response.to.have.status(200);",
+							"    });",
+							"",
+							"    // Test for the \"data\" property in the response body",
+							"    pm.test(\"Response contains data\", function () {",
+							"        var jsonData = pm.response.json();",
+							"        pm.expect(jsonData).to.have.property('data');",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/user/8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"    // Test for response status code",
+							"    pm.test(\"Status code is 200\", function () {",
+							"        pm.response.to.have.status(200);",
+							"    });",
+							"",
+							"    // Test for the user properties in the response body",
+							"    pm.test(\"Response contains user properties\", function () {",
+							"        var jsonData = pm.response.json();",
+							"        pm.expect(jsonData).to.have.property('id');",
+							"        pm.expect(jsonData).to.have.property('name');",
+							"        pm.expect(jsonData).to.have.property('surname');",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/user/8",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"    // Test for response status code",
+							"    pm.test(\"Status code is 201 Created\", function () {",
+							"        pm.response.to.have.status(201);",
+							"    });",
+							"",
+							"    // Test for the \"user_id\" property in the response body",
+							"    pm.test(\"Response contains user_id\", function () {",
+							"        var jsonData = pm.response.json();",
+							"        pm.expect(jsonData).to.have.property('user_id');",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1000,\n    \"name\": \"John\",\n    \"surname\": \"Doe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/user/100",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" // Test for response status code",
+							"    pm.test(\"Status code is 200\", function () {",
+							"        pm.response.to.have.status(200);",
+							"    });",
+							"",
+							"    // Test for the \"message\" property in the response body",
+							"    pm.test(\"Response contains message\", function () {",
+							"        var jsonData = pm.response.json();",
+							"        pm.expect(jsonData).to.have.property('message', 'User details updated successfully!!! ');",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"UpdatedName\",\n    \"surname\": \"UpdatedSurname\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/user/100",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/user/1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for response status code",
+							"    pm.test(\"Status code is 200\", function () {",
+							"        pm.response.to.have.status(200);",
+							"    });",
+							"",
+							"    // Test for the \"message\" property in the response body",
+							"    pm.test(\"Response contains message\", function () {",
+							"        var jsonData = pm.response.json();",
+							"        pm.expect(jsonData).to.have.property('message', 'user record delete successfully!!! ');",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/user/1000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
