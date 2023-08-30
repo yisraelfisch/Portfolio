@@ -15,7 +15,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
             	
-            	sh 'sudo apt install nodejs npm'
+            	sh 'apt install nodejs npm'
             
                 sh 'npm install -g newman'
             }
