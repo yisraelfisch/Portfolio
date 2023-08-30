@@ -18,6 +18,12 @@ pipeline {
             }
         }
         
+        stage('Test') {
+            steps {
+                sh 'echo "Running Tests"'
+            }
+        }
+        
         stage('Run Postman Tests') {
             steps {
                 sh '/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/postman_collection.json'
