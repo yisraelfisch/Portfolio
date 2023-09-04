@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 # define sqlite database file path
 db_dir = os.path.abspath('data.db')
+db_path = '~/git_hub/REST_api_with_crud_operation_and_sql/data.db'
 
 # app settings
 app = Flask(__name__)
