@@ -21,8 +21,8 @@ pipeline {
         
         stage('Run Postman Tests') {
             steps {
-            	sh 'python3 /home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/app.py'
-                sh 'python3 /home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/test.py'
+            	sh '/usr/bin/python3 /home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/app.py'
+                sh '/usr/bin/python3 /home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/test.py'
             }
         }
     }
