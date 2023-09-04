@@ -12,14 +12,6 @@ pipeline {
             }
         }
         
-        stage('Install Dependencies') {
-            steps {
-            	
-            	sh 'apt install nodejs npm'
-            
-                sh 'npm install -g newman'
-            }
-        }
         
         stage('Test') {
             steps {
@@ -29,7 +21,8 @@ pipeline {
         
         stage('Run Postman Tests') {
             steps {
-                sh '/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/postman_collection.json'
+            	sh '/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/app.py'
+                sh '/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/test.py'
             }
         }
     }
