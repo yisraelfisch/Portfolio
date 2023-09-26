@@ -21,9 +21,11 @@ pipeline {
         
         
         stage('run docker') {
-            steps {
-                sh 'sudo /home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/docker-compose.yml up -d'
-            }
+             steps {
+        	dir('/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/') {
+            		sh 'docker-compose up -d'
+            		}
+        	}
         }
         
         stage('Run Postman Tests') {
