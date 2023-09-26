@@ -19,17 +19,17 @@ return (n & (n - 1))? 0: 1;
 
 int IsPow2Loop(unsigned int n)
 {
-	int count = 0;
+	int counter = 0;
 	while(0 != n)
 	{
 		if((n & 1) == 1)
 		{
-			++count;
+			++counter;
 		}
 		n = n >> 1;
 	}
  
- return (count==1 ? 1 : 0);
+ return (counter==1 ? 1 : 0);
 }
 
 int AddOne(int x)
