@@ -23,7 +23,7 @@ pipeline {
         stage('run docker') {
              steps {
         	dir('/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/') {
-            		sh 'sudo /usr/bin/python3 /home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/app.py'
+            		sh 'sudo /usr/bin/python3 test.py'
             		}
         	}
         }
