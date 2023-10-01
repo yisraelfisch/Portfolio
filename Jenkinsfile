@@ -36,7 +36,7 @@ pipeline {
     }
     
     post {
-    	alwayes {
+    	always {
     		dir('/home/yisrael/git_hub/REST_api_with_crud_operation_and_sql/') {
 			sh 'sudo docker compose down --remove-orphans' 
 			sh 'docker compose ps'
